@@ -21577,7 +21577,16 @@ var ProductPopup = function (_React$Component) {
           name: 'hieu',
           avatar: '/img/hieu.jpeg'
         }
-      }
+      },
+      comments: [{
+        name: "Leo",
+        avatar: "/img/leo.jpeg",
+        content: "I love this product!"
+      }, {
+        name: "Jonny",
+        avatar: "/img/hieu.jpeg",
+        content: "Me too"
+      }]
     };
     return _this;
   }
@@ -21631,7 +21640,64 @@ var ProductPopup = function (_React$Component) {
   }, {
     key: 'renderBodyDiscussion',
     value: function renderBodyDiscussion() {
-      return _react2.default.createElement('section', { className: 'discussion' });
+      return _react2.default.createElement(
+        'section',
+        { className: 'discussion' },
+        _react2.default.createElement(
+          'h2',
+          null,
+          'Discussion'
+        ),
+        _react2.default.createElement(
+          'section',
+          { className: 'post-comment' },
+          _react2.default.createElement('img', { className: 'medium-avatar', src: '/img/leo.jpeg' }),
+          _react2.default.createElement('input', { placeholder: 'What do you think of this product?' })
+        ),
+        this.renderComments()
+      );
+    }
+  }, {
+    key: 'renderBody',
+    value: function renderBody() {
+      return _react2.default.createElement(
+        'section',
+        { className: 'product-popup-body' },
+        _react2.default.createElement(
+          'main',
+          null,
+          this.renderBodyDiscussion()
+        )
+      );
+    }
+  }, {
+    key: 'renderComments',
+    value: function renderComments() {
+      return _react2.default.createElement(
+        'ul',
+        { className: 'comment-list' },
+        this.state.comments.map(function (comment, idx) {
+          return _react2.default.createElement(
+            'li',
+            { key: idx },
+            _react2.default.createElement('img', { className: 'medium-avatar', src: comment.avatar }),
+            _react2.default.createElement(
+              'section',
+              null,
+              _react2.default.createElement(
+                'strong',
+                null,
+                comment.name
+              ),
+              _react2.default.createElement(
+                'p',
+                null,
+                comment.content
+              )
+            )
+          );
+        })
+      );
     }
   }, {
     key: 'render',
@@ -21639,7 +21705,8 @@ var ProductPopup = function (_React$Component) {
       return _react2.default.createElement(
         _Popup2.default,
         _extends({}, this.props, { style: 'product-popup' }),
-        this.renderHeader()
+        this.renderHeader(),
+        this.renderBody()
       );
     }
   }]);
