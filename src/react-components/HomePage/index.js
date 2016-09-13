@@ -8,24 +8,6 @@ class HomePage extends React.Component {
     this.state = {
       productList: []
     }
-    // Initialize Firebase
-    var config = {
-      apiKey: "AIzaSyC1cirj1iG-VMLLAMoj9jN87kASbNfihXU",
-      authDomain: "snackhunt-5d80c.firebaseapp.com",
-      databaseURL: "https://snackhunt-5d80c.firebaseio.com/",
-      storageBucket: "snackhunt-5d80c.appspot.com",
-    };
-    firebase.initializeApp(config);
-
-    var db = firebase.database();
-    var firebaseRef = db.ref("/products");
-    firebaseRef.on("value",(snapshot) =>{
-      var products = snapshot.val();
-      this.setState({
-        productList: products
-      })
-    });
-
   }
 
   render() {
