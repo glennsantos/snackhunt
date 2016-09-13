@@ -1,5 +1,6 @@
 import alt from '../alt';
 import Firebase from 'firebase';
+import _ from 'lodash';
 
 class Actions {
   initSession() {
@@ -52,6 +53,72 @@ class Actions {
      setTimeout(() => dispatch(null));
     }
   }
+
+  getProducts() {
+    return(dispatch) => {
+      var productRef = firebase.database().ref("/products");
+      productRef.on("value",(snapshot)=> {
+        // use lodash to turn objects in firebase to array
+        var productValue = snapshot.val();
+        var products = _(productValue).keys().map((productKey) => {
+          var item = _.clone(productValue[productKey]);
+          item.key = productKey;
+          return item;
+        })
+        .value();
+        dispatch(products);
+      });
+    }
+  }
+
+  addProduct(product) {
+    return(dispatch) => {
+      var productRef = firebase.database().ref("/products");
+      productRef.push(product);
+    }
+  }
+
+  addVote(productId, userId) {
+    return(dispatch) => {
+    var upvoteRef = firebase.database().ref().child('products').child(productId).child('upvote');
+
+    var voteRef = firebase.database().ref().child('votes').child(productId).child(userId);
+    voteRef.on('value', (snapshot) => {
+      if(snapshot.val()== null) {
+        voteRef.set(true);
+      }
+      var vote = 0;
+      upvoteRef.on('value', (snapshot) => {
+        vote = snapshot.val();
+      });
+      upvoteRef.set(vote+1);
+    });
+    }
+  }
+
+  addComment(productId, comment) {
+    return (dispatch) => {
+      var commentRef = firebase.database().ref().child('comments');
+      commentRef.child(productId).push(comment);
+    }
+  }
+
+  getComments(productId) {
+    return(dispatch) => {
+      var commentRef = firebase.database().ref().child('comments');
+      commentRef.child(productId).on('value', (snapshot) => {
+        var commentsVal = snapshot.val();
+        var comments = _(commentsVal).keys().map((commentKey) =>{
+          var item = _.clone(commentsVal[commentKey]);
+          item.key = commentKey;
+          return item;
+        })
+        .value();
+        dispatch(comments);
+      });
+    }
+  }
+
 }
 
 export default alt.createActions(Actions);

@@ -5,12 +5,27 @@ import {decorate, bind} from 'alt-utils/lib/decorators';
 @decorate(alt)
 class ProductStore {
   constructor() {
-    this.state = {user: null};
+    this.state = {
+      user: null,
+      products: [],
+      comments: []
+    };
   }
 
-  @bind(Actions.login, Actions.initSession, Actions.logout)
+  @bind(Actions.login, Actions.logout, Actions.initSession)
   setUser(user) {
     this.setState({user: user});
+  }
+
+  @bind(Actions.getProducts)
+  getProducts(products) {
+    this.setState({products: products});
+  }
+
+
+  @bind(Actions.getComments)
+  getComments(comments) {
+    this.setState({comments: comments})
   }
 }
 

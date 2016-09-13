@@ -1,28 +1,38 @@
 import React from 'react';
 import ProductList from '../Product/ProductList';
 import * as firebase from 'firebase';
+import connectToStores from 'alt-utils/lib/connectToStores';
+import ProductStore from '../../stores/ProductStore';
+import Actions from '../../actions';
 
+@connectToStores
 class HomePage extends React.Component {
   constructor() {
     super();
-    this.state = {
-      productList: []
-    }
+    Actions.getProducts();
+  }
+
+  static getStores() {
+    return [ProductStore];
+  }
+
+  static getPropsFromStores() {
+    return ProductStore.getState();
   }
 
   render() {
     return (
       <section>
         <header>
-          <img src="/img/banner.jpeg" width="100%" />
+          <img src="/img/catbanner.jpg" width="100%" />
         </header>
 
         <section>
           <section className="container">
             {
-              this.state.productList
+              this.props.products
               ?
-              <ProductList productList={this.state.productList} />
+              <ProductList productList={this.props.products} />
               :
               null
             }
