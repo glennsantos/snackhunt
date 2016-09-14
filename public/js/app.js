@@ -40264,7 +40264,7 @@ var HomePage = (0, _connectToStores2.default)(_class = function (_React$Componen
         _react2.default.createElement(
           'header',
           null,
-          _react2.default.createElement('img', { src: '/img/catbanner.jpg', width: '100%' })
+          _react2.default.createElement('img', { src: '/img/friesheader.jpg', width: '100%' })
         ),
         _react2.default.createElement(
           'section',
@@ -40351,7 +40351,7 @@ var LoginPopup = function (_React$Component) {
       return _react2.default.createElement(
         _Popup2.default,
         _extends({}, this.props, { style: 'login-popup' }),
-        _react2.default.createElement('img', { src: '/img/kitty.png' }),
+        _react2.default.createElement('img', { src: '/img/snackhunt-login.png' }),
         _react2.default.createElement(
           'h1',
           null,
@@ -40781,7 +40781,7 @@ var Navbar = function (_React$Component) {
       return _react2.default.createElement(
         'a',
         { href: '#' },
-        _react2.default.createElement('img', { src: '/img/snackhuntlogo.jpg', width: '42' })
+        _react2.default.createElement('img', { src: '/img/snackhuntlogo.png', height: '42' })
       );
     }
   }, {

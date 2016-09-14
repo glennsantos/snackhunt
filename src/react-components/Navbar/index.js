@@ -26,7 +26,7 @@ class Navbar extends React.Component {
 
   renderLogo() {
     return (
-      <a href="#"><img src="/img/snackhuntlogo.jpg" width="42"/></a>
+      <a href="#"><img src="/img/snackhuntlogo.png" height="42"/></a>
     );
   }
 
