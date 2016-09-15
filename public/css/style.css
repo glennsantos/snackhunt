@@ -148,11 +148,11 @@ a {
 }
 
 .upvote-button:hover {
-  color: #ff8022;
+  color: #ff2d2d;
 }
 
 .upvote-button:active {
-  color: #ff8022;
+  color: #ff2d2d;
 }
 
 .upvote-button > * {
@@ -273,11 +273,11 @@ button:hover {
 
 .post-btn {
 	color: white;
-	background: #5a9aee;
+	background: #ff2d2d;
 }
 
 .post-popup .post-header {
-	background: #5a9aee;
+	background: #ff2d2d;
 	color: white;
 	text-align: center;
 	padding: 20px;
@@ -338,7 +338,7 @@ button:hover {
 
 .product-popup header {
 	text-align: center;
-	background-color: #ff8022;
+	background-color: #ff2d2d;
 	background-position: 50% 50%;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -371,7 +371,7 @@ button:hover {
 .product-popup header .header-shadow > section .getit-btn {
 	border-radius: 4px;
 	padding: 15px 25px;
-	background-color: #ff8022;
+	background-color: #ff2d2d;
 	color: white;
 }
 
