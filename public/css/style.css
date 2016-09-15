@@ -50,7 +50,9 @@ table {
 /*------------------------------ CUSTOM ------------------------------*/
 
 body {
-  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  /*font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;*/
+	/*font-family: 'Oxygen', sans-serif;*/
+	font-family: 'Open Sans', sans-serif;
   font-size: 13px;
   color: #444444;
 }
@@ -109,6 +111,7 @@ a {
   line-height: 50px;
   color: #999999;
   font-size: 14px;
+	font-family: 'Open Sans', sans-serif;
 }
 
 .product-item-link {
@@ -145,11 +148,11 @@ a {
 }
 
 .upvote-button:hover {
-  color: #5e9aee;
+  color: #ff8022;
 }
 
 .upvote-button:active {
-  color: #5e9aee;
+  color: #ff8022;
 }
 
 .upvote-button > * {
@@ -162,7 +165,7 @@ a {
 .login-btn {
 	padding-top: 9px;
 	color: #999999;
-	font-weight: 500;
+	font-weight: 800;
 	font-size: 11px;
 	display: block;
 }
@@ -290,6 +293,7 @@ button:hover {
 
 .post-popup > section {
 	font-size: 14px;
+	font-family: 'Open Sans', sans-serif;
 	border: 1px solid #f2f2f2;
 	padding: 20px 0;
 	height: 70%;
@@ -334,7 +338,7 @@ button:hover {
 
 .product-popup header {
 	text-align: center;
-	background-color: #5e9aee;
+	background-color: #ff8022;
 	background-position: 50% 50%;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -342,7 +346,7 @@ button:hover {
 
 .product-popup header .header-shadow {
 	background-color: transparent;
-	background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%);
+	background-image: linear-gradient(-225deg, rgba(82,75,70,0.6) 0%, rgba(51,28,10,0.6) 50%);
 	padding: 45px;
 }
 
@@ -367,7 +371,7 @@ button:hover {
 .product-popup header .header-shadow > section .getit-btn {
 	border-radius: 4px;
 	padding: 15px 25px;
-	background-color: #5898f1;
+	background-color: #ff8022;
 	color: white;
 }
 
@@ -399,6 +403,7 @@ button:hover {
 .product-popup .product-popup-body main .discussion .post-comment input {
 	padding: 10px;
 	font-size: 15px;
+	font-family: 'Open Sans', sans-serif;
 	width: 90%;
 	border: 1px solid #f0efef;
 }
@@ -417,8 +422,9 @@ button:hover {
 }
 
 .comment-list li > section > strong {
-	font-size: 14px;
+	font-size: 15px;
 	font-weight: 600;
+	font-family: 'Oxygen', sans-serif;
 	display: inline-block;
 	margin-bottom: 15px;
 }
@@ -450,6 +456,7 @@ button:hover {
 	display: block;
 	width: 140px;
 	font-size: 15px;
+	font-family: 'Oxygen', sans-serif;
 	line-height: 38px;
 	padding: 0 20px;
 	color: #bbbbbb;
@@ -459,5 +466,3 @@ button:hover {
 	background-color: #f2f2f2;
 	border-radius: 4px;
 }
-
-/*--- MORE STYLING ---*/
