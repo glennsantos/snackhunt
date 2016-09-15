@@ -63,7 +63,7 @@ class ProductPopup extends React.Component {
           ?
           <section className="post-comment">
             <img className="medium-avatar" src={this.props.user.avatar}/>
-            <input placeholder="What do you think of this product?" onKeyUp={this.handleComment} />
+            <input placeholder="What do you think of this snack?" onKeyUp={this.handleComment} />
           </section>
           :
           null

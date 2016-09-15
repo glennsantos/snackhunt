@@ -41133,7 +41133,7 @@ var ProductPopup = (0, _connectToStores2.default)(_class = function (_React$Comp
           'section',
           { className: 'post-comment' },
           _react2.default.createElement('img', { className: 'medium-avatar', src: this.props.user.avatar }),
-          _react2.default.createElement('input', { placeholder: 'What do you think of this product?', onKeyUp: this.handleComment })
+          _react2.default.createElement('input', { placeholder: 'What do you think of this snack?', onKeyUp: this.handleComment })
         ) : null,
         this.renderComments()
       );
